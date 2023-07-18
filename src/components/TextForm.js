@@ -28,14 +28,14 @@ export default function TextForm(props) {
     }
     const [text, setText] = useState("");
   console.log(  text.split(" "));
-var count =0;
+/*var count =0;
   const array=text.split(" ");
 for (let index = 0; index < array.length; index++) {
     
     if(array[index]==='') count++;
     
 }
-
+*/
 
     return (
         <>
@@ -50,7 +50,7 @@ for (let index = 0; index < array.length; index++) {
                 <h2>Your Text Summary</h2>
 
               
-                <p> {array.length-count} words and {text.length} character</p>
+                <p> {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} character</p>
                 
                 <p> {(text.split(" ").filter((element)=>{return element.length!==0}).length)*0.008} minute require to read</p>
                 <h2>Preview</h2>
