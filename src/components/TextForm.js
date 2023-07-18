@@ -41,10 +41,10 @@ for (let index = 0; index < array.length; index++) {
         <>
             <div className="container"    >
                 <h1 style={{color: props.mode==='dark'?'white':'black'}} >{props.heading}</h1>
-                <div className="mb-3" ><textarea className="form-control" style={{backgroundColor:props.mode==='dark'?'grey':'white',color:props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="mybox" rows="10"></textarea></div>
-                <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert To Uppercase</button>
-                <button className="btn btn-primary mx-1" onClick={handleLpClick}>Convert To Lowerercase</button>
-                <button className="btn btn-primary mx-1" onClick={handleClear}>Clear Text</button>
+                <div className="mb-3" ><textarea className="form-control" style={{backgroundColor:props.mode==='dark'?'#385074 ':'white',color:props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="mybox" rows="10"></textarea></div>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert To Uppercase</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleLpClick}>Convert To Lowerercase</button>
+                <button className="btn btn-primary mx-1 my-1 " onClick={handleClear}>Clear Text</button>
             </div>
             <div className="container" my="2"  style={{color: props.mode==='dark'?'white':'black'}}>
                 <h2>Your Text Summary</h2>
@@ -52,7 +52,7 @@ for (let index = 0; index < array.length; index++) {
               
                 <p> {array.length-count} words and {text.length} character</p>
                 
-                <p> {(text.split(" ").length - 1) * 0.008} minute require to read</p>
+                <p> {(text.split(" ").filter((element)=>{return element.length!==0}).length)*0.008} minute require to read</p>
                 <h2>Preview</h2>
                 <p> This is How Onchange working </p>
               
